@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
-
+import ./App.css;
 
 const mockData = [
   { name: "一支牙膏", price: 15, category: "日用品" },
