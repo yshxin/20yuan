@@ -34,11 +34,16 @@ export default function App() {
       />
       <button onClick={handleSearch}>查一查能买啥</button>
 
-       {results.length === 0 && (
+       {results.length === 0 && !isNaN(parseFloat(budget)) && (
+         <div>
+         <p>没有找到适合您预算的商品哦！</p>
+         
           <div className="cute-cat-container">
             <p className="cute-cat">cute cat image here</p>
           </div>
+          </div>
         )}
+
 
       {results.length > 0 && (
         <div className="results-container">
