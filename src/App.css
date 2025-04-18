@@ -127,3 +127,27 @@ h1 {
   font-size: 14px;
   color: #666;
 }
+
+/* Add styles for the cute cat */
+.cute-cat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 200px;
+  margin-top: 20px;
+}
+
+.cute-cat {
+  width: 200px;
+  height: 200px;
+  background-color: #f4aac9; /* Pink background */
+  border-radius: 50%; /* Circular shape */
+  display: flex; /* Use flexbox for centering text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 18px; /* Adjust font size as needed */
+  color: #fff; /* Text color */
+  text-align: center;
+  padding: 10px;
+}

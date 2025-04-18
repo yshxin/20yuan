@@ -34,6 +34,12 @@ export default function App() {
       />
       <button onClick={handleSearch}>查一查能买啥</button>
 
+       {results.length === 0 && (
+          <div className="cute-cat-container">
+            <p className="cute-cat">cute cat image here</p>
+          </div>
+        )}
+
       {results.length > 0 && (
         <div className="results-container">
           {results.map((item, index) => (
