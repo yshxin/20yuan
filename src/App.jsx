@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
-import data from "./mockData.json";
-import myImage from './assets/running_dog_2.gif';
+import data from "./mockData.json";;
+import myImage from "./assets/running_dog_2.gif";
 
 const categoriesToEmoji = {
   "日用品": "🧼",
@@ -11,6 +11,7 @@ const categoriesToEmoji = {
   "服饰": "👕",
   "日用品": "🧼",
   "饮食": "🍱",
+  
   "学习": "📚",
   "出行": "🚎",
   "服饰": "👕",
@@ -28,12 +29,11 @@ const ResultCard = ({ item }) => {
         <div className="result-card">
           <h3 className="text-lg font-bold mb-2">{item.name}</h3>
           <p className="text-gray-600 mb-2">价格：{item.price} 元</p>
-          <p className="text-gray-600 mb-2">
-            {getEmoji(item.category)} {item.category}
-          </p>
+          <p className="text-gray-600 mb-2">{getEmoji(item.category)}{" "}
+          {item.category}</p>
           <p className="text-gray-600">{item.description}</p>
         </div>
-    </div>
+      </div>
   );
 };
 
@@ -46,10 +46,17 @@ export default function App() {
   }, []);
   const [budget, setBudget] = useState("");
   const [results, setResults] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSearch = () => {
+      
       const value = parseFloat(budget);
-      if (isNaN(value) || !budget) {
+      if(isNaN(value) || value < 0){
+        setErrorMessage("金额不能小于0哦～");
+        return;
+      }
+      setErrorMessage("");
+      if(!budget){
           setResults(defaultItems);
       } else {
           const filtered = data.data
@@ -63,7 +70,7 @@ export default function App() {
           } else {
               setResults(filtered);
           }
-
+          
       }
     };
 
@@ -87,6 +94,7 @@ export default function App() {
       <p className="text-sm text-center text-pink-300 mb-4 mt-[-10px]">
         没有预算也能看看今天有什么小确幸哦~ 👇
       </p>
+      {errorMessage && <p className="text-sm text-red-500 text-center">{errorMessage}</p>}
 
       {results.length === 0 && !isNaN(parseFloat(budget)) && (
         <p className="mt-4 text-center text-gray-500">没有找到适合您预算的商品哦！</p>
@@ -108,5 +116,6 @@ export default function App() {
           <img className="w-[20px] animate-bounce" src={myImage} alt="Running Dog" />
         </div> */}
     </div>
+  
   );
 }
