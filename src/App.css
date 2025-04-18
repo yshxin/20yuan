@@ -116,6 +116,17 @@ h1 {
   text-align: left;
 }
 
+@keyframes move {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 10px;
+  }
+  100% {
+    left: 0px;
+  }
+}
 .result-item h3 {
   margin: 0 0 10px;
   font-size: 19px;
@@ -125,6 +136,13 @@ h1 {
 .result-item p {
   margin: 0;
   font-size: 14px;
+
+  position: relative;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
   color: #666;
 }
 

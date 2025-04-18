@@ -43,12 +43,14 @@ export default function App() {
       {results.length > 0 && (
         <div className="results-container">
           {results.map((item, index) => (
-            <div key={index} className="result-item">
-              <h3>{item.name}</h3>
-              <p>
-                价格：¥{item.price} · 类别：{item.category}
-              </p>
-            </div>
+             <div key={index} >
+                <div className="result-item">
+                  <h3>{item.name}</h3>
+                  <p>
+                    价格：¥{item.price} · 类别：{item.category}
+                  </p>
+                </div>
+              </div>
           ))}
         </div>
       )}
