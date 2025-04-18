@@ -15,14 +15,16 @@ export default function App() {
   const createSakura = () => {
     const sakuraCount = Math.floor(Math.random() * 11) + 10; // Random number between 10 and 20
     for (let i = 0; i < sakuraCount; i++) {
-      const sakura = document.createElement('div');
-      sakura.className = 'sakura';
-      
-      // Randomize starting position and animation delay
-      const startLeft = Math.random() * 100;
-      const animationDelay = Math.random() * 5; // Up to 5 seconds delay
-      const duration = Math.random() * 5 + 5;
-
+        const sakura = document.createElement('div');
+        sakura.className = 'sakura';
+        
+        // Randomize starting position, animation delay, and size
+        const startLeft = Math.random() * 100; // 0% to 100%
+        const animationDelay = Math.random() * 5; // Up to 5 seconds delay
+        const duration = Math.random() * 5 + 5; // 5 to 10 seconds
+        const size = Math.random() > 0.5 ? '20px' : '15px';
+  
+        sakura.style.width = size;
       sakura.style.left = `${startLeft}%`;
       sakura.style.animationDelay = `${animationDelay}s`;
       sakura.style.animationDuration = `${duration}s`;
