@@ -16,14 +16,17 @@ const defaultItems = [
   { name: '整理办公桌', price: 0, category: '免费', description: '整理一下办公桌，保持愉悦的心情。', link: '' }
 ];
 
+
 const ResultCard = ({ item }) => {
   return (
-    <div className="result-card">
-      <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-      <p className="text-gray-600 mb-2">价格：{item.price}</p>
-      <p className="text-gray-600 mb-2">类别：{item.category}</p>
-      <p className="text-gray-600">{item.description}</p>
-      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-auto text-blue-500 hover:underline">了解更多</a>
+    <div className="result-item">
+        <div className="result-card">
+          <h3 className="text-lg font-bold mb-2">{item.name}</h3>
+          <p className="text-gray-600 mb-2">价格：{item.price}</p>
+          <p className="text-gray-600 mb-2">类别：{item.category}</p>
+          <p className="text-gray-600">{item.description}</p>
+          <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-auto text-blue-500 hover:underline">了解更多</a>
+        </div>
     </div>
   );
 };

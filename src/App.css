@@ -1,5 +1,6 @@
 body {
-  background-color: #fff;
+  background-image: radial-gradient(#fdeff4, #f9c6d9);
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,5 +89,21 @@ input[type='number'] {
   width: 100%;
   color: #777;
   font-size: 0.8rem;
+}
+
+.result-item {
+  animation: move 2s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
