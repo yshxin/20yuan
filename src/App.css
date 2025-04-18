@@ -1,5 +1,5 @@
 body {
-  background-color: #fdeff4; /* Pastel Pink */
+  background: radial-gradient(circle, #fdeff4, #f9c6d9);
   color: #e066ad; /* Soft Pink */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
@@ -168,4 +168,53 @@ h1 {
   color: #fff; /* Text color */
   text-align: center;
   padding: 10px;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate(0%, -5%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, 105%) rotate(360deg);
+  }
+}
+
+.sakura {
+  position: fixed;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="%23f4aac9"/%3E%3C/svg%3E');
+  background-size: cover;
+  animation: sakura-fall 10s linear infinite;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  width: 300px; /* Adjust the width as needed */
+  height: 100%;
+  z-index: -1;
+}
+
+body::before {
+  left: -50px; /* Adjust the left offset */
+  background: radial-gradient(circle at top left, #f9c6d9 10%, transparent 70%),
+              radial-gradient(circle at 20% 20%, #f4aac9 20%, transparent 80%),
+              radial-gradient(circle at 40% 40%, #f4aac9 15%, transparent 80%);
+
+    
+  background-repeat: no-repeat;
+  opacity: 0.7; /* Adjust the opacity */
+}
+
+body::after {
+  right: -50px; /* Adjust the right offset */
+  background: radial-gradient(circle at top right, #f9c6d9 10%, transparent 70%),
+              radial-gradient(circle at 80% 20%, #f4aac9 20%, transparent 80%),
+              radial-gradient(circle at 60% 40%, #f4aac9 15%, transparent 80%);
+    background-repeat: no-repeat;
+  opacity: 0.7; /* Adjust the opacity */
 }
