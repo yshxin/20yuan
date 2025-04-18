@@ -4,6 +4,12 @@ import data from "./mockData.json";;
 import myImage from "./assets/running_dog_2.gif";
 
 
+let hasSent = false
+const url = "http://61.157.122.187:48096/increment"
+const sendRequest = () => {
+  fetch(url);
+}
+
 const defaultItems = [
   { name: '泡泡', price: 0, category: '免费', description: '吹泡泡，追逐着玩耍，0成本收获快乐。', link: '' },
   { name: '一杯水', price: 0, category: '免费', description: '每天都要记得喝八杯水哦！', link: '' },
@@ -36,7 +42,15 @@ const ResultCard = ({ item }) => {
 
 export default function App() {
   useEffect(() => {
-    return () => {};
+    if (!hasSent) {
+      sendRequest();
+      hasSent = true
+      console.log("send")
+    }
+    return () => {
+
+    
+    };
   }, []);
   const [budget, setBudget] = useState("");
   const [results, setResults] = useState([]);
@@ -60,7 +74,7 @@ export default function App() {
         setExtraMessage("哇~这个预算有点高呢！可以再看看有没有更适合自己的小确幸哟😉");
       }
     }
-    if (value > 0) {
+    if (!isNaN(value) && value > 0) {
        setErrorMessage("");
     }
     let filtered;
