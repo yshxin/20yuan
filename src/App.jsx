@@ -1,5 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
+import myImage from './assets/running_dog_2.gif';
 
 const categoriesToEmoji = {
   "日用品": "🧼",
@@ -74,7 +75,8 @@ export default function App() {
       <h1 className="text-3xl font-bold text-center mb-4 text-pink-500">
         今天的你，¥能做点啥？
       </h1>
-      <div className="input-container">
+      <div className="input-container flex items-center gap-4">
+        <img className="w-[30px] h-[30px] mr-2" src={myImage} alt="Running Dog" />
         <input
           type="number"
           value={budget}
@@ -88,7 +90,6 @@ export default function App() {
       <p className="text-sm text-center text-pink-300 mb-4 mt-[-10px]">
         没有预算也能看看今天有什么小确幸哦~ 👇
       </p>
-
 
       {results.length === 0 && !isNaN(parseFloat(budget)) && (
         <p className="mt-4 text-center text-gray-500">没有找到适合您预算的商品哦！</p>
@@ -104,13 +105,11 @@ export default function App() {
       <footer className="footer">
           <p>© 2024 ¥20 Project ｜ Made with 💖</p>
           <div className="mt-2 flex gap-4">
-            <button className="bg-pink-300 text-white px-4 py-2 rounded-lg hover:scale-105">GitHub</button>
-            <button className="bg-pink-300 text-white px-4 py-2 rounded-lg hover:scale-105">分享给朋友</button>
           </div>
         </footer>
-        <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-4">
-          <img className="w-[80px] animate-bounce" src="https://i.pinimg.com/originals/8e/0c/8b/8e0c8b73357f1b8c5793a99a5f217f69.gif" alt="Running Cat" />
-        </div>
+        {/* <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-4">
+          <img className="w-[20px] animate-bounce" src={myImage} alt="Running Dog" />
+        </div> */}
     </div>
   );
 }
