@@ -44,7 +44,7 @@ body {
 input[type='number'] {
   flex-grow: 1;
   padding: 10px;
-  border: 2px solid #f4aac9;
+  border: 2px solid #fdeff4;
   border-radius: 8px;
   margin-right: 10px;
   outline: none;
@@ -73,14 +73,14 @@ input[type='number'] {
 }
 
 .result-card {
-  border: 1px solid #f4aac9;
+  border: 1px solid #fdeff4;
   border-radius: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fdf5f7; box-shadow: 0px 4px 8px rgba(249, 198, 217, 0.5);
 }
 
 .result-card a {
@@ -89,10 +89,12 @@ input[type='number'] {
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 10px;
+  background-color: #fdeff4;
+  color: #6f505a;
   text-align: center;
   width: 100%;
-  color: #777;
+  padding: 20px;
   font-size: 0.8rem;
 }
 
@@ -110,6 +112,10 @@ input[type='number'] {
   100% {
     transform: translateX(0);
   }
+}
+
+.result-card *{
+  color: #6f505a;
 }
 
 .footer-button {

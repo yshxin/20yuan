@@ -39,7 +39,6 @@ const ResultCard = ({ item }) => {
             {getEmoji(item.category)} {item.category}
           </p>
           <p className="text-gray-600">{item.description}</p>
-          <button className="bg-pink-300 text-white px-4 py-2 rounded-lg hover:scale-105 mt-auto">了解更多</button>
         </div>
     </div>
   );
