@@ -1,5 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
+import data from "./mockData.json";
 import myImage from './assets/running_dog_2.gif';
 
 const categoriesToEmoji = {
@@ -8,21 +9,13 @@ const categoriesToEmoji = {
   "学习": "📚",
   "出行": "🚎",
   "服饰": "👕",
+  "日用品": "🧼",
+  "饮食": "🍱",
+  "学习": "📚",
+  "出行": "🚎",
+  "服饰": "👕",
   "免费": ""
-};
-const mockData = [
-  { name: "一支牙膏", price: 15, category: "日用品" },
-  { name: "洗衣液（小瓶）", price: 18, category: "日用品" },
-  { name: "一顿家常便饭（自己做）", price: 20, category: "饮食" },
-  { name: "公交卡充值", price: 20, category: "出行" },
-  { name: "拼多多热销T恤", price: 19.9, category: "服饰" },
-  { name: "二手书一本", price: 18, category: "学习" }
-];
-const defaultItems = [
-  { name: '泡泡', price: 0, category: '免费', description: '吹泡泡，追逐着玩耍，0成本收获快乐。', link: '' },
-  { name: '一杯水', price: 0, category: '免费', description: '每天都要记得喝八杯水哦！', link: '' },
-  { name: '整理办公桌', price: 0, category: '免费', description: '整理一下办公桌，保持愉悦的心情。', link: '' }
-];
+}
 
 const getEmoji = (category) => {
   return categoriesToEmoji[category] || "";
@@ -59,18 +52,23 @@ export default function App() {
       if (isNaN(value) || !budget) {
           setResults(defaultItems);
       } else {
-          const filtered = mockData.filter(item => item.price <= value);
-          setResults(filtered);
+          const filtered = data.data
+            .filter(item => item.price <= value)
+            .sort((a, b) => b.price - a.price);
+
+          if (filtered.length > 6) {
+              const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+              const randomResults = shuffled.slice(0, 6);
+              setResults(randomResults);
+          } else {
+              setResults(filtered);
+          }
+
       }
     };
 
   return (
     <div className="container">
-      <img
-        className="cute-cat"
-        src="https://media.tenor.com/j6a_9W3zJ8MAAAAi/cat-run.gif"
-        alt="Running Cat"
-      />
       <h1 className="text-3xl font-bold text-center mb-4 text-pink-500">
         今天的你，¥能做点啥？
       </h1>
