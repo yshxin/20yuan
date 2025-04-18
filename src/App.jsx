@@ -5,10 +5,16 @@ import myImage from "./assets/running_dog_2.gif";
 
 
 let hasSent = false
-const url = "http://61.157.122.187:48096/increment"
+const url = "/increment"
 const sendRequest = () => {
-  fetch(url);
+  fetch(url).catch(error => {
+    console.error("There was an error!", error);
+  });
 }
+
+
+
+
 
 const defaultItems = [
   { name: '泡泡', price: 0, category: '免费', description: '吹泡泡，追逐着玩耍，0成本收获快乐。', link: '' },
