@@ -1,35 +1,40 @@
 body {
-  background-color: #ffe4ec;
-  color: #d63384;
-  font-family: Arial, sans-serif;
+  background-color: #fdeff4; /* Pastel Pink */
+  color: #e066ad; /* Soft Pink */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 input {
-  padding: 10px;
-  margin: 10px 0;
+  padding: 12px;
+  margin: 15px 0;
   width: 80%;
   max-width: 300px;
-  border: 2px solid #007bff;
-  border-radius: 25px;
+  border: 2px solid #f4aac9; /* Lighter Pink */
+  border-radius: 30px; /* More rounded corners */
   outline: none;
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease;
 }
 
 input:focus {
-  border-color: #0056b3;
+  border-color: #f9c6d9; /* Even Lighter Pink on focus */
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: 2px solid #007bff;
-  border-radius: 25px;
+  padding: 12px 24px;
+  background-color: #f4aac9; /* Lighter Pink */
+  color: #fff;
+  border: none; /* Removed border for a cleaner look */
+  border-radius: 30px; /* More rounded corners */
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, border-color 0.3s;
+  font-size: 17px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -37,9 +42,10 @@ button:hover {
   border-color: #0056b3;
 }
 
+
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #root {
@@ -86,7 +92,7 @@ h1 {
 }
 
 .app-container {
-  text-align: center;
+  
   font-family: Arial, sans-serif;
   padding: 20px;
 }
@@ -99,20 +105,21 @@ h1 {
   margin-top: 20px;
 }
 
+
 .result-item {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff0f5; /* Very Light Pink */
+  border: none;
+  border-radius: 15px; /* More rounded */
+  box-shadow: 0 6px 12px rgba(244, 170, 201, 0.3); /* Pink shadow */
   padding: 15px;
-  width: 250px;
+  width: 280px; /* Slightly wider */
   text-align: left;
 }
 
 .result-item h3 {
   margin: 0 0 10px;
-  font-size: 18px;
-  color: #333;
+  font-size: 19px;
+  color: #e066ad;
 }
 
 .result-item p {
